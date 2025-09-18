@@ -25,12 +25,12 @@ export default function Bluebusdasboard() {
 
   useEffect(() => {
     // ✅ Fetch stats
-    fetch(`${process.env.API}/api/dashboard/stats`)
+    fetch(`${process.env.REACT_APP_API}/api/dashboard/stats`)
       .then(res => res.json())
       .then(data => setStats(data));
 
     // ✅ Fetch weekly commission
-    fetch(`${process.env.API}/api/dashboard/weekly-commission`)
+    fetch(`${process.env.REACT_APP_API}/api/dashboard/weekly-commission`)
       .then(res => res.json())
       .then(data => {
         setChartData({
@@ -51,7 +51,7 @@ export default function Bluebusdasboard() {
       });
 
     // ✅ Fetch activities
-    fetch(`${process.env.API}/api/dashboard/activities`)
+    fetch(`${process.env.REACT_APP_API}/api/dashboard/activities`)
       .then(res => res.json())
       .then(data => setActivities(data));
   }, []);
