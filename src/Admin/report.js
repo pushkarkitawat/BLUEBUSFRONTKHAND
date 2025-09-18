@@ -16,7 +16,7 @@ export default function Report() {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const res = await fetch(`${process.env.API}/api/booking/booking`);
+        const res = await fetch(`${process.env.REACT_APP_API}/api/booking/booking`);
         const data = await res.json();
         setBookings(data);
       } catch (err) {
