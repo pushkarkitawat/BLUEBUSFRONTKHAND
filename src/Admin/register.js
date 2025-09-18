@@ -13,7 +13,7 @@ const Register = () => {
       setSelectedDate(today);
   
       try {
-        const res = await fetch(`${process.env.API}/api/booking/bookings?date=${today}`);
+        const res = await fetch(`${process.env.REACT_APP_API}/api/booking/bookings?date=${today}`);
         if (!res.ok) throw new Error("Failed to fetch bookings");
         const data = await res.json();
         setBookings(data);
@@ -32,7 +32,7 @@ const Register = () => {
    
     try {
       const res = await fetch(
-        `${process.env.API}/api/booking/bookings/${id}/status`,
+        `${process.env.REACT_APP_API}/api/booking/bookings/${id}/status`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -55,7 +55,7 @@ const Register = () => {
   };
   const handlePrintTicket = async (id) => {
     try {
-      const res = await fetch(`${process.env.API}/api/booking/ticket/${id}`);
+      const res = await fetch(`${process.env.REACT_APP_API}/api/booking/ticket/${id}`);
       if (!res.ok) throw new Error("Failed to fetch ticket");
   
       
@@ -81,7 +81,7 @@ const Register = () => {
     alert(date);
   
     try {
-      const res = await fetch(`${process.env.API}/api/booking/bookings?date=${date}`);
+      const res = await fetch(`${process.env.REACT_APP_API}/api/booking/bookings?date=${date}`);
       if (!res.ok)  throw new Error("Failed to fetch bookings");
       const data = await res.json();
       
