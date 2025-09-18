@@ -50,7 +50,7 @@ export default function BlueBusBooking() {
     setPnr(newPNR);
     
     try {
-      const res = await fetch(`${process.env.API}/api/booking/book`, {
+      const res = await fetch(`${process.env.REACT_APP_API}/api/booking/book`, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ ...form, pnr: newPNR }),
