@@ -13,7 +13,7 @@ export default function ManageBooking() {
 
     try {
       const res = await fetch(
-        `${process.env.API}/api/booking/pnr/${encodeURIComponent(search)}`
+        `${process.env.REACT_APP_API}/api/booking/pnr/${encodeURIComponent(search)}`
       );
       if (!res.ok) {
         const errData = await res.json();
@@ -34,7 +34,7 @@ export default function ManageBooking() {
     if (window.confirm("Are you sure you want to cancel this booking?")) {
       try {
         const res = await fetch(
-          `${process.env.API}/api/booking/cancel/${pnr}`,
+          `${process.env.REACT_APP_API}/api/booking/cancel/${pnr}`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
