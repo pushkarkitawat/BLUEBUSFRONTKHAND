@@ -44,7 +44,7 @@ export default function LoginPage() {
 
     setLoading(true);
     try {
-      const res = await fetch(`${process.env.API}/api/login`, {
+      const res = await fetch(`${process.env.REACT_APP_API}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
